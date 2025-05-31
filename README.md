@@ -142,9 +142,8 @@ graph LR
 ### Backend Setup
 
 1. Navigate to backend directory:
-\`\`\`bash
 cd backend
-\`\`\`
+
 
 2. Install dependencies:
 \`\`\`bash
