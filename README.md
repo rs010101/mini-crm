@@ -13,7 +13,9 @@ This Mini CRM platform is designed to streamline customer communication and camp
 
 ## 📑 Quick Links
 - [Live Demo](https://minicrm-frontend.onrender.com)
-- [API Documentation](https://minicrm-backend.onrender.com/api-docs)
+- [Frontend Deployment](https://mini-crm-frontend-ea8x.vercel.app)
+- [Backend Deployment](https://minicrm-backend-1.onrender.com)
+- [Swagger API Documentation](https://minicrm-backend-1.onrender.com/api-docs/)
 - [Backend Repository](https://github.com/rs010101/miniCRM-backend)
 - [Frontend Repository](https://github.com/rs010101/miniCRM-frontend)
 
