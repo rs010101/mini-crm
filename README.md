@@ -276,13 +276,3 @@ graph TD
    - Enhanced caching strategies
    - Batch processing for large datasets
 
-## 📜 License & Contributing
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-### Contributing
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details on how to:
-- Submit bug reports
-- Request features
-- Submit pull requests
-- Follow our coding standards
