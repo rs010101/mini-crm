@@ -159,20 +159,17 @@ Make sure you have the following installed before proceeding:
    ```
 
 3. **Configure Environment**
-   Create a `.env` file in the backend directory:
-   ```env
+   Create a `.env` file in the backend directory:   ```env
    # Server Configuration
-   PORT=5001
-   NODE_ENV=development
+   PORT=5000
 
    # Database Configuration
    MONGO_URI=your_mongodb_connection_string
-   REDIS_URL=your_redis_connection_string
-
-   # Authentication
+   REDIS_URL=your_redis_connection_string   # Authentication & APIs
    JWT_SECRET=your_strong_jwt_secret_key
    GOOGLE_CLIENT_ID=your_google_oauth_client_id
-   GOOGLE_CLIENT_SECRET=your_google_oauth_client_secret
+   GEMINI_API=your_gemini_api_key
+   BACKEND_URL=your_backend_url
    ```
    > 💡 Replace placeholder values with your actual credentials
 
@@ -181,7 +178,7 @@ Make sure you have the following installed before proceeding:
    npm run dev
    ```
    
-   🎉 Backend should now be running at `http://localhost:5001`
+   🎉 Backend should now be running at `http://localhost:5000`
 
 ### 🎨 Frontend Setup
 
@@ -198,38 +195,23 @@ Make sure you have the following installed before proceeding:
    ```
 
 3. **Configure Environment**
-   Create a `.env` file in the frontend directory:
-   ```env
-   # API Configuration
-   VITE_API_URL=http://localhost:5001
-
-   # Authentication
+   Create a `.env` file in the frontend directory:   ```env
    VITE_GOOGLE_CLIENT_ID=your_google_oauth_client_id
-
-   # Optional Configurations
-   VITE_APP_NAME="Mini CRM"
-   VITE_APP_DESCRIPTION="Customer Campaign Management Platform"
    ```
 
 4. **Start Development Server**
    ```powershell
    npm run dev
-   ```
-
-   🎉 Frontend should now be running at `http://localhost:5173`
+   ```   🎉 Frontend should now be running at `http://localhost:3000`
 
 ### 🔍 Verify Setup
 
-1. **Backend Health Check**
-   - Open `http://localhost:5001/api/health` in your browser
-   - You should see a success message
-
-2. **Frontend Connection**
-   - Open `http://localhost:5173` in your browser
+1. **Frontend Connection**
+   - Open `http://localhost:3000` in your browser
    - You should see the login page
 
-3. **API Documentation**
-   - Access Swagger docs at `http://localhost:5001/api-docs`
+2. **API Documentation**
+   - Access complete API documentation at `https://minicrm-backend-1.onrender.com/api-docs`
    - Test API endpoints directly from the documentation
 
 ### 🎯 Next Steps
