@@ -1,0 +1,9 @@
+order_external_id,customer_identifier,items_description,total_amount,order_date
+O1,emili5@example.com,MacBook Air M2,1000,01-06-2025
+O2,shyam1@gmail.com,4K Monitor + Standing Desk + Ergonomic Chair,3979,31-05-2025
+O3,aryan2@example.com,Tesla Model 3 or Model Y,67854,30-05-2025
+O4,rakesh4@example.com,Electric bike,2765,02-05-2025
+O5,kia5@example.com,Luxury car,87363.3,23-05-2025
+O6,shyam1@gmail.com,Music Production Gear,7352,11-04-2025
+O7,aryan2@example.com,Bluetooth earbuds,109,14-05-2025
+O8,mohan3@example.com,Arduino Robotics Kit,256,29-03-2025
