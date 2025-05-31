@@ -14,8 +14,8 @@ This Mini CRM platform is designed to streamline customer communication and camp
 ## 📑 Quick Links
 - [Live Demo](https://minicrm-frontend.onrender.com)
 - [API Documentation](https://minicrm-backend.onrender.com/api-docs)
-- [Backend Repository](https://github.com/yourusername/minicrm-backend)
-- [Frontend Repository](https://github.com/yourusername/minicrm-frontend)
+- [Backend Repository](https://github.com/rs010101/miniCRM-backend)
+- [Frontend Repository](https://github.com/rs010101/miniCRM-frontend)
 
 ## ✨ Key Features
 
