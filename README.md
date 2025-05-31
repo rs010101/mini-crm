@@ -131,85 +131,213 @@ graph LR
     D --> E[Campaign Launch]
 ```
 
-## Getting Started
+## 🚀 Getting Started
 
-### Prerequisites
-- Node.js (v14 or later)
-- MongoDB
-- Redis
-- Google Cloud Platform account
+### 📋 Prerequisites
 
-### Backend Setup
+Make sure you have the following installed before proceeding:
 
-1. Navigate to backend directory:
-cd backend
+| Requirement | Version | Description |
+|------------|---------|-------------|
+| Node.js    | v14 or later | JavaScript runtime |
+| MongoDB    | v4.4 or later | Database server |
+| Redis      | v6.0 or later | Caching server |
+| GCP Account | - | With OAuth 2.0 configured |
 
+### 🔧 Backend Setup
 
-2. Install dependencies:
-\`\`\`bash
-npm install
-\`\`\`
+1. **Navigate to Backend Directory**
+   ```powershell
+   cd backend
+   ```
 
-3. Create .env file:
-\`\`\`env
-PORT=5000
-MONGO_URI=your_mongodb_uri
-REDIS_URL=your_redis_url
-GOOGLE_CLIENT_ID=your_google_client_id
-JWT_SECRET=your_jwt_secret
-\`\`\`
+2. **Install Dependencies**
+   ```powershell
+   npm install   # Using npm
+   # OR
+   yarn install  # Using yarn
+   ```
 
-4. Start the server:
-\`\`\`bash
-npm run dev
-\`\`\`
+3. **Configure Environment**
+   Create a `.env` file in the backend directory:
+   ```env
+   # Server Configuration
+   PORT=5001
+   NODE_ENV=development
 
-### Frontend Setup
+   # Database Configuration
+   MONGO_URI=your_mongodb_connection_string
+   REDIS_URL=your_redis_connection_string
 
-1. Navigate to frontend directory:
-\`\`\`bash
-cd frontend
-\`\`\`
+   # Authentication
+   JWT_SECRET=your_strong_jwt_secret_key
+   GOOGLE_CLIENT_ID=your_google_oauth_client_id
+   GOOGLE_CLIENT_SECRET=your_google_oauth_client_secret
+   ```
+   > 💡 Replace placeholder values with your actual credentials
 
-2. Install dependencies:
-\`\`\`bash
-npm install
-\`\`\`
+4. **Start Development Server**
+   ```powershell
+   npm run dev
+   ```
+   
+   🎉 Backend should now be running at `http://localhost:5001`
 
-3. Create .env file:
-\`\`\`env
-REACT_APP_API_URL=http://localhost:5000
-REACT_APP_GOOGLE_CLIENT_ID=your_google_client_id
-\`\`\`
+### 🎨 Frontend Setup
 
-4. Start the development server:
-\`\`\`bash
-npm start
-\`\`\`
+1. **Navigate to Frontend Directory**
+   ```powershell
+   cd frontend
+   ```
 
-## API Documentation
+2. **Install Dependencies**
+   ```powershell
+   npm install   # Using npm
+   # OR
+   yarn install  # Using yarn
+   ```
 
-The API is documented using Swagger. Once the backend is running, visit:
-\`http://localhost:5000/api-docs\`
+3. **Configure Environment**
+   Create a `.env` file in the frontend directory:
+   ```env
+   # API Configuration
+   VITE_API_URL=http://localhost:5001
 
-### Key Endpoints:
+   # Authentication
+   VITE_GOOGLE_CLIENT_ID=your_google_oauth_client_id
 
-- **Authentication**
-  - POST /api/auth/google - Google OAuth login
-  
-- **Customers**
-  - GET /api/customers - List all customers
-  - POST /api/customers - Upload customer data
-  
-- **Campaigns**
-  - GET /api/campaigns - List campaigns
-  - POST /api/campaigns - Create campaign
-  - GET /api/campaigns/:id/stats - Get campaign stats
-  
-- **Segments**
-  - GET /api/segment-rules - List segment rules
-  - POST /api/segment-rules - Create segment rule
-  - GET /api/segment-rules/:id/customers - Get customers in segment
+   # Optional Configurations
+   VITE_APP_NAME="Mini CRM"
+   VITE_APP_DESCRIPTION="Customer Campaign Management Platform"
+   ```
+
+4. **Start Development Server**
+   ```powershell
+   npm run dev
+   ```
+
+   🎉 Frontend should now be running at `http://localhost:5173`
+
+### 🔍 Verify Setup
+
+1. **Backend Health Check**
+   - Open `http://localhost:5001/api/health` in your browser
+   - You should see a success message
+
+2. **Frontend Connection**
+   - Open `http://localhost:5173` in your browser
+   - You should see the login page
+
+3. **API Documentation**
+   - Access Swagger docs at `http://localhost:5001/api-docs`
+   - Test API endpoints directly from the documentation
+
+### 🎯 Next Steps
+
+After successful setup, you can:
+- Import sample customer data
+- Create your first segment
+- Design a test campaign
+- Explore AI message generation
+
+## 📚 API Documentation
+
+### 🔐 Authentication API
+
+| Endpoint | Method | Description | Request Body | Response |
+|----------|--------|-------------|--------------|----------|
+| `/auth/login` | POST | User login with credentials | `{ "email": "string", "password": "string" }` | `{ "token": "string" }` |
+| `/auth/google` | GET | Google OAuth login | - | Redirects to Google |
+| `/auth/refresh` | POST | Refresh access token | `{ "refreshToken": "string" }` | `{ "token": "string" }` |
+
+### 👥 Customer Management
+
+| Endpoint | Method | Description | Request Body | Response |
+|----------|--------|-------------|--------------|----------|
+| `/customers` | GET | List all customers | Query params for filtering | Array of customers |
+| `/customers` | POST | Add new customer | Customer object | Created customer |
+| `/customers/:id` | PUT | Update customer | Updated fields | Updated customer |
+| `/customers/import` | POST | Bulk import customers | CSV file | Import results |
+
+### 📢 Campaign Operations
+
+| Endpoint | Method | Description | Request Body | Response |
+|----------|--------|-------------|--------------|----------|
+| `/campaigns` | GET | List all campaigns | Query params for filtering | Array of campaigns |
+| `/campaigns` | POST | Create new campaign | Campaign details | Created campaign |
+| `/campaigns/:id/launch` | POST | Launch campaign | `{ "scheduledTime": "string" }` | Campaign status |
+| `/campaigns/:id/stats` | GET | Get campaign metrics | - | Campaign statistics |
+
+### 🎯 Segment Management
+
+| Endpoint | Method | Description | Request Body | Response |
+|----------|--------|-------------|--------------|----------|
+| `/segments` | GET | List all segments | - | Array of segments |
+| `/segments` | POST | Create segment | Segment rules | Created segment |
+| `/segments/:id/preview` | GET | Preview segment members | - | Array of matching customers |
+
+### 🤖 AI Integration
+
+| Endpoint | Method | Description | Request Body | Response |
+|----------|--------|-------------|--------------|----------|
+| `/ai/generate-message` | POST | Generate campaign message | `{ "context": "string" }` | Generated content |
+| `/ai/optimize` | POST | Optimize message | `{ "message": "string" }` | Optimized content |
+
+### 📊 Analytics
+
+| Endpoint | Method | Description | Query Parameters | Response |
+|----------|--------|-------------|------------------|----------|
+| `/analytics/overview` | GET | Get dashboard stats | Time range | Statistics object |
+| `/analytics/campaigns` | GET | Campaign performance | Campaign ID | Performance metrics |
+
+### 🔍 Response Codes
+
+| Code | Description |
+|------|-------------|
+| 200 | Success |
+| 201 | Created |
+| 400 | Bad Request |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+| 404 | Not Found |
+| 500 | Server Error |
+
+### 🔒 Authentication
+
+All API endpoints except `/auth/*` require a valid JWT token in the Authorization header:
+
+```http
+Authorization: Bearer <your_jwt_token>
+```
+
+### 📝 Examples
+
+#### Login Request
+```http
+POST /auth/login
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "securePassword123"
+}
+```
+
+#### Create Campaign
+```http
+POST /campaigns
+Content-Type: application/json
+Authorization: Bearer <your_jwt_token>
+
+{
+  "name": "Summer Sale 2024",
+  "segmentId": "507f1f77bcf86cd799439011",
+  "message": "Don't miss our biggest sale!",
+  "scheduledTime": "2024-06-01T10:00:00Z"
+}
+```
+
+💡 **Tip**: Use the Swagger documentation at `/api-docs` for interactive API testing
 
 ## 🤖 AI Integration Details
 
