@@ -200,7 +200,8 @@ Make sure you have the following installed before proceeding:
 3. **Configure Environment**
    Create a `.env` file in the frontend directory:
    ```env
-   VITE_GOOGLE_CLIENT_ID=your_google_oauth_client_id
+   GOOGLE_CLIENT_ID=your_google_oauth_client_id
+   BACKEND_URL=your_backend_url
    ```
 
 4. **Start Development Server**
