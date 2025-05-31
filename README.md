@@ -159,18 +159,21 @@ Make sure you have the following installed before proceeding:
    ```
 
 3. **Configure Environment**
-   Create a `.env` file in the backend directory:   ```env
+   Create a `.env` file in the backend directory:
+   ```env
    # Server Configuration
    PORT=5000
 
-   # Database Configuration
+   # Database Connection
    MONGO_URI=your_mongodb_connection_string
-   REDIS_URL=your_redis_connection_string   # Authentication & APIs
+   REDIS_URL=your_redis_connection_string
+
+   # Authentication & APIs
    JWT_SECRET=your_strong_jwt_secret_key
    GOOGLE_CLIENT_ID=your_google_oauth_client_id
    GEMINI_API=your_gemini_api_key
    BACKEND_URL=your_backend_url
-   ```
+   
    > 💡 Replace placeholder values with your actual credentials
 
 4. **Start Development Server**
@@ -195,14 +198,17 @@ Make sure you have the following installed before proceeding:
    ```
 
 3. **Configure Environment**
-   Create a `.env` file in the frontend directory:   ```env
+   Create a `.env` file in the frontend directory:
+   ```env
    VITE_GOOGLE_CLIENT_ID=your_google_oauth_client_id
    ```
 
 4. **Start Development Server**
    ```powershell
    npm run dev
-   ```   🎉 Frontend should now be running at `http://localhost:3000`
+   ```
+   
+   🎉 Frontend should now be running at `http://localhost:3000`
 
 ### 🔍 Verify Setup
 
