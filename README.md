@@ -1,8 +1,5 @@
 # Mini CRM - Customer Campaign Management Platform
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
-![Node Version](https://img.shields.io/badge/node-%3E%3D14-brightgreen)
 
 A modern customer relationship management platformthat helps businesses manage their customer data, create targeted campaigns, and leverage AI for personalized messaging.
 
@@ -10,8 +7,8 @@ A modern customer relationship management platformthat helps businesses manage t
 - [Overview](#-overview)
 - [Quick Links](#-quick-links)
 - [Key Features](#-key-features)
-- [Technology Stack](#-technology-stack)
-- [Project Structure](#-project-structure)
+- [Technology Stack](#️-technology-stack)
+- [Project Structure](#️-project-structure)
 - [Core Workflows](#-core-workflows)
 - [Getting Started](#-getting-started)
 - [API Documentation](#-api-documentation)
@@ -436,57 +433,6 @@ graph TD
    }
    ```
 
-## 🤝 Contributing
-
-We welcome contributions to make Mini CRM even better! Here's how you can help:
-
-1. **Fork the Repository**
-   - Create your own fork of the code
-   - Clone your fork locally
-
-2. **Create a Feature Branch**
-   ```powershell
-   git checkout -b feature/AmazingFeature
-   ```
-
-3. **Make Your Changes**
-   - Write your code
-   - Follow our coding standards
-   - Add tests if applicable
-   - Update documentation as needed
-
-4. **Commit Your Changes**
-   ```powershell
-   git commit -m 'Add some AmazingFeature'
-   ```
-
-5. **Push to Your Branch**
-   ```powershell
-   git push origin feature/AmazingFeature
-   ```
-
-6. **Open a Pull Request**
-   - Go to the original repository
-   - Click "New Pull Request"
-   - Select your feature branch
-   - Submit the pull request
-
-### Coding Standards
-- Follow existing code style
-- Use meaningful variable and function names
-- Add comments for complex logic
-- Ensure all tests pass
-- Update documentation
-
-### Need Help?
-Feel free to open an issue for:
-- Bug reports
-- Feature requests
-- Questions about the codebase
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🔮 Future Enhancements
 
