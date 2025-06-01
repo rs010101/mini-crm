@@ -1,6 +1,24 @@
 # Mini CRM - Customer Campaign Management Platform
 
-A modern customer relationship management platform that helps businesses manage their customer data, create targeted campaigns, and leverage AI for personalized messaging.
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![Node Version](https://img.shields.io/badge/node-%3E%3D14-brightgreen)
+
+A modern customer relationship management platformthat helps businesses manage their customer data, create targeted campaigns, and leverage AI for personalized messaging.
+
+## 📚 Table of Contents
+- [Overview](#-overview)
+- [Quick Links](#-quick-links)
+- [Key Features](#-key-features)
+- [Technology Stack](#-technology-stack)
+- [Project Structure](#-project-structure)
+- [Core Workflows](#-core-workflows)
+- [Getting Started](#-getting-started)
+- [API Documentation](#-api-documentation)
+- [AI Integration Details](#-ai-integration-details)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Future Enhancements](#-future-enhancements)
 
 ## 🎯 Overview
 
@@ -158,23 +176,23 @@ Make sure you have the following installed before proceeding:
    yarn install  # Using yarn
    ```
 
-3. **Configure Environment**
-   Create a `.env` file in the backend directory:
+3. **Configure Environment**   Create a `.env` file in the backend directory:
    ```env
    # Server Configuration
    PORT=5000
 
    # Database Connection
-   MONGO_URI=your_mongodb_connection_string
-   REDIS_URL=your_redis_connection_string
+   MONGO_URI=mongodb://localhost:27017/minicrm
+   REDIS_URL=redis://localhost:6379
 
    # Authentication & APIs
    JWT_SECRET=your_strong_jwt_secret_key
    GOOGLE_CLIENT_ID=your_google_oauth_client_id
    GEMINI_API=your_gemini_api_key
-   BACKEND_URL=your_backend_url
-   
-   > 💡 Replace placeholder values with your actual credentials
+   BACKEND_URL=http://localhost:5000
+   ```
+
+   > 💡 A `.env.example` file is provided in the repository. Copy it to `.env` and update the values.
 
 4. **Start Development Server**
    ```powershell
@@ -201,8 +219,10 @@ Make sure you have the following installed before proceeding:
    Create a `.env` file in the frontend directory:
    ```env
    GOOGLE_CLIENT_ID=your_google_oauth_client_id
-   BACKEND_URL=your_backend_url
+   BACKEND_URL=http://localhost:5000
    ```
+
+   > 💡 A `.env.example` file is provided in the repository. Copy it to `.env` and update the values.
 
 4. **Start Development Server**
    ```powershell
@@ -299,31 +319,75 @@ All API endpoints except `/auth/*` require a valid JWT token in the Authorizatio
 Authorization: Bearer <your_jwt_token>
 ```
 
-### 📝 Examples
+### 📝 API Examples
 
-#### Login Request
-```http
-POST /auth/login
-Content-Type: application/json
+#### Authentication
 
-{
-  "email": "user@example.com",
-  "password": "securePassword123"
-}
+```bash
+# Google OAuth Login
+curl -X POST "http://localhost:5000/api/auth/google" \
+  -H "Content-Type: application/json" \
+  -d '{"credential": "your_google_credential_token"}'
 ```
 
-#### Create Campaign
-```http
-POST /campaigns
-Content-Type: application/json
-Authorization: Bearer <your_jwt_token>
+#### Customer Management
 
-{
-  "name": "Summer Sale 2024",
-  "segmentId": "507f1f77bcf86cd799439011",
-  "message": "Don't miss our biggest sale!",
-  "scheduledTime": "2024-06-01T10:00:00Z"
-}
+```bash
+# List Customers
+curl -X GET "http://localhost:5000/api/customers" \
+  -H "Authorization: Bearer your_jwt_token"
+
+# Import Customers from CSV
+curl -X POST "http://localhost:5000/api/customers/import" \
+  -H "Authorization: Bearer your_jwt_token" \
+  -H "Content-Type: multipart/form-data" \
+  -F "file=@customers.csv"
+```
+
+#### Campaign Operations
+
+```bash
+# Create a New Campaign
+curl -X POST "http://localhost:5000/api/campaigns" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer your_jwt_token" \
+  -d '{
+    "name": "Summer Sale 2024",
+    "segmentId": "507f1f77bcf86cd799439011",
+    "message": "Dont miss our biggest sale!",
+    "scheduledTime": "2024-06-01T10:00:00Z"
+  }'
+
+# Get Campaign Statistics
+curl -X GET "http://localhost:5000/api/campaigns/123/stats" \
+  -H "Authorization: Bearer your_jwt_token"
+```
+
+#### Segment Rules
+
+```bash
+# Create a New Segment
+curl -X POST "http://localhost:5000/api/segment-rules" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer your_jwt_token" \
+  -d '{
+    "name": "VIP Customers",
+    "conditions": [{
+      "field": "totalOrders",
+      "operator": "greaterThan",
+      "value": 10
+    }]
+  }'
+```
+
+#### Orders
+
+```bash
+# Import Orders from CSV
+curl -X POST "http://localhost:5000/api/orders/import" \
+  -H "Authorization: Bearer your_jwt_token" \
+  -H "Content-Type: multipart/form-data" \
+  -F "file=@orders.csv"
 ```
 
 💡 **Tip**: Use the Swagger documentation at `/api-docs` for interactive API testing
@@ -371,6 +435,58 @@ graph TD
      }
    }
    ```
+
+## 🤝 Contributing
+
+We welcome contributions to make Mini CRM even better! Here's how you can help:
+
+1. **Fork the Repository**
+   - Create your own fork of the code
+   - Clone your fork locally
+
+2. **Create a Feature Branch**
+   ```powershell
+   git checkout -b feature/AmazingFeature
+   ```
+
+3. **Make Your Changes**
+   - Write your code
+   - Follow our coding standards
+   - Add tests if applicable
+   - Update documentation as needed
+
+4. **Commit Your Changes**
+   ```powershell
+   git commit -m 'Add some AmazingFeature'
+   ```
+
+5. **Push to Your Branch**
+   ```powershell
+   git push origin feature/AmazingFeature
+   ```
+
+6. **Open a Pull Request**
+   - Go to the original repository
+   - Click "New Pull Request"
+   - Select your feature branch
+   - Submit the pull request
+
+### Coding Standards
+- Follow existing code style
+- Use meaningful variable and function names
+- Add comments for complex logic
+- Ensure all tests pass
+- Update documentation
+
+### Need Help?
+Feel free to open an issue for:
+- Bug reports
+- Feature requests
+- Questions about the codebase
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🔮 Future Enhancements
 
