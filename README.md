@@ -75,12 +75,11 @@ This Mini CRM platform is designed to streamline customer communication and camp
 
 ### 🌐 Frontend
 ```javascript
-{
-  "framework": "React",
+{  "framework": "React",
   "styling": ["Tailwind CSS", "React Icons"],
   "stateManagement": "React Hooks",
   "routing": "React Router",
-  "buildTool": "Vite"
+  "buildTool": "Create React App"
 }
 ```
 
@@ -92,7 +91,7 @@ This Mini CRM platform is designed to streamline customer communication and camp
   "database": "MongoDB with Mongoose",
   "caching": "Redis",
   "authentication": ["JWT", "Google OAuth 2.0"],
-  "documentation": "Swagger/OpenAPI"
+  "documentation": "Swagger"
 }
 ```
 
