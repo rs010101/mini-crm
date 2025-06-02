@@ -5,6 +5,7 @@ A modern customer relationship management platformthat helps businesses manage t
 
 ## 📚 Table of Contents
 - [Overview](#-overview)
+- [System Architecture](#system-architecture)
 - [Quick Links](#-quick-links)
 - [Key Features](#-key-features)
 - [Technology Stack](#️-technology-stack)
@@ -13,8 +14,6 @@ A modern customer relationship management platformthat helps businesses manage t
 - [Getting Started](#-getting-started)
 - [API Documentation](#-api-documentation)
 - [AI Integration Details](#-ai-integration-details)
-- [Contributing](#-contributing)
-- [License](#-license)
 - [Future Enhancements](#-future-enhancements)
 
 ## 🎯 Overview
@@ -25,6 +24,10 @@ This Mini CRM platform is designed to streamline customer communication and camp
 - Design and execute personalized campaigns
 - Track campaign performance in real-time
 - Generate AI-powered message suggestions
+
+### System Architecture
+![MiniCRM System Architecture](./architecture.jpg)
+*System architecture diagram showing the interaction between different components of the MiniCRM platform*
 
 ## 📑 Quick Links
 - [Live Demo](https://minicrm-frontend.onrender.com)
