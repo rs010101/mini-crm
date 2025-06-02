@@ -446,7 +446,6 @@ graph TD
 2. **Advanced Analytics**
    - Real-time campaign tracking
    - Customer journey mapping
-   - ROI analytics
 
 3. **Integration Capabilities**
    - Email service providers
