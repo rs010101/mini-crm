@@ -43,10 +43,27 @@ const swaggerOptions = {
       version: '1.0.0',
       description: 'API documentation for the backend project'
     },
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT'
+        }
+      }
+    },
+    security: [{
+      bearerAuth: []
+    }],
     servers: [
       {
-        url: 'http://localhost:5000', // or your deployed URL
+        url: 'https://minicrm-backend-1.onrender.com',
+        description: 'Production server'
       },
+      {
+        url: 'http://localhost:5000',
+        description: 'Local development server'
+      }
     ],
   },
   apis: ['./src/apis/routes/*.js'], // <--- location of JSDoc comments
