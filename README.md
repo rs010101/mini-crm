@@ -30,7 +30,7 @@ This Mini CRM platform is designed to streamline customer communication and camp
 *System architecture diagram showing the interaction between different components of the MiniCRM platform*
 
 ## 📑 Quick Links
-- [Live Demo](https://minicrm-frontend.onrender.com)
+- [Live Demo](https://drive.google.com/file/d/1IenKk6pMYKWZeo43PQS4GtsktzGx_rH1/view?usp=sharing)
 - [Frontend Deployment](https://mini-crm-frontend-ea8x.vercel.app)
 - [Backend Deployment](https://minicrm-backend-1.onrender.com)
 - [Swagger API Documentation](https://minicrm-backend-1.onrender.com/api-docs/)
